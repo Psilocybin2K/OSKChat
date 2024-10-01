@@ -1,0 +1,50 @@
+﻿pipelines:
+    - name: GenerateTestPlan
+      description: Generate a test plan based on user requirements.
+      steps:
+        - name: _gatherContext
+          description: Gather context for the test plan.
+          instruction: |
+            Gather the context for the test plan by following these instructions.
+    
+                1. Read the user requirements.
+                2. Search and identify the most similar existing test plan(s).
+                3. Based on similar test plans, generate preliminary test plan sections with high-level outlines.
+        - name: AnalyzeRequirements
+          description: Understand the user requirements.
+          instruction: |
+            Analyze the user requirements and create a test plan by following these instructions.
+
+                1. Read the user requirements.
+                2. Identify the key UI features being added, removed, or changed.
+                3. Identify any required updates to the database.
+                4. Identify any required updates to the backend services.
+                3. Summarize each key feature and it's expected behavior.
+                    a. For each feature, identify whether it is a new feature, an update to an existing feature, or a removal of a feature.
+                    c. For each feature, identify the expected behavior.
+                    b. Group the features by the type of update required (UI, database, backend services).
+        - name: GenerateTestPlan
+          description: Generate a test plan based on user requirements.
+          instruction: |
+            Generate a test plan based on the user requirements by following these instructions.
+
+                1. Create a test plan document.
+                2. Add the test plan sections based on the preliminary test plan sections.
+                3. Add the test cases for each feature.
+                4. Add the test data required for each test case.
+                5. Add the expected results for each test case.
+                6. Add the test environment details.
+                7. Add the test execution details.
+                8. Review the test plan document.
+        - name: OutputTestPlan
+          description: Output the test plan document.
+          instruction: |
+            Without including any additional information, summarization, or comments, output the test plan in markdown formatted code-block.
+            Test plan should be concise, accurate, and formatted as Azure DevOps Test Plan
+                
+                Example:
+
+                ```markdown
+
+                ```
+    
